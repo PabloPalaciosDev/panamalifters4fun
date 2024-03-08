@@ -4,8 +4,14 @@ import LandingPage from "./app/pages/landing/page";
 
 //layout  
 import NavBar from './components/nav/NavBar'
+import AtletasMasc from "./app/pages/atletas/masc/page";
+import AtletasFem from "./app/pages/atletas/fem/page";
 
-const routes = [{ path: "/", element: <LandingPage /> }];
+const routes = [
+  { path: "/", element: <LandingPage /> },
+  { path: "/atletas-masc", element: <AtletasMasc /> },
+  { path: "/atletas-fem", element: <AtletasFem />}
+];
 
 function App() {
   return (
