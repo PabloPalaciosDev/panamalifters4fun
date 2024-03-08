@@ -103,6 +103,8 @@ export default function ProfileMasc() {
                                                     <Grid item xs={4}>
                                                         <StarIcon sx={{ fontSize: 20, color: 'red' }} />
                                                         <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
+                                                            Total Oficial 
+                                                            <br/>
                                                             {atleta.totalfpp} Kg
                                                         </Typography>
                                                     </Grid>
@@ -111,6 +113,8 @@ export default function ProfileMasc() {
                                                     <Grid item xs={4}>
                                                         <StarIcon sx={{ fontSize: 20, color: 'red' }} />
                                                         <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
+                                                            Total No Oficial
+                                                            <br />
                                                             {atleta.totalnofpp} Kg
                                                         </Typography>
                                                     </Grid>

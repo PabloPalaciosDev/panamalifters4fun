@@ -70,7 +70,11 @@ export default function ProfileFem() {
                             {atletas.map((atleta) => (
                                 <Grid item xs={12} sm={6} md={4} key={atleta.nombre}>
                                     <Card elevation={5} sx={{ borderRadius: '25px' }}>
-                                        <CardHeader sx={{ textTransform: 'uppercase' }} title={atleta.nombre} subheader={atleta.edad + ' años'} />
+                                        <CardHeader
+                                            sx={{ textTransform: 'uppercase' }}
+                                            title={atleta.nombre}
+                                            subheader={atleta.edad + ' años'}
+                                        />
                                         <AccountCircleIcon sx={{ fontSize: 150, color: '#0049B0' }} />
                                         <br />
                                         <CardContent sx={{ padding: '1px' }}>
@@ -103,6 +107,8 @@ export default function ProfileFem() {
                                                     <Grid item xs={4}>
                                                         <StarIcon sx={{ fontSize: 20, color: 'red' }} />
                                                         <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
+                                                            Total Oficial
+                                                            <br />
                                                             {atleta.totalfpp} Kg
                                                         </Typography>
                                                     </Grid>
@@ -111,6 +117,8 @@ export default function ProfileFem() {
                                                     <Grid item xs={4}>
                                                         <StarIcon sx={{ fontSize: 20, color: 'red' }} />
                                                         <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
+                                                            Total No Oficial
+                                                            <br />
                                                             {atleta.totalnofpp} Kg
                                                         </Typography>
                                                     </Grid>
