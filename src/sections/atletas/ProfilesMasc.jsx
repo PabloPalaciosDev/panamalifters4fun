@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardContent, Typography, Tooltip, CircularProgress, Box, Avatar } from '@mui/material';
+import { Card, CardHeader, CardContent, Typography, Tooltip, CircularProgress, Box } from '@mui/material';
 import { Grid } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import DateRangeIcon from '@mui/icons-material/DateRange';
@@ -71,19 +71,7 @@ export default function ProfileMasc() {
                                 <Grid item xs={12} sm={6} md={4} key={atleta.nombre}>
                                     <Card elevation={5} sx={{ borderRadius: '25px' }}>
                                         <CardHeader sx={{ textTransform: 'uppercase' }} title={atleta.nombre} subheader={atleta.edad + ' años'} />
-                                        <Avatar
-                                            sx={{
-                                                width: 100,
-                                                height: 100,
-                                                margin: 'auto',
-                                                fontWeight: 'bold',
-                                                backgroundColor: '#014AB0',
-                                                fontSize: 30,
-                                                textAlign: 'center',
-                                            }}
-                                            src={AccountCircleIcon}
-                                            alt={atleta.nombre}
-                                        />
+                                        <AccountCircleIcon sx={{ fontSize: 150, color: '#0049B0' }} />
                                         <br />
                                         <CardContent sx={{ padding: '1px' }}>
                                             <Grid container spacing={1} display={'flex'} justifyContent={'center'}>
