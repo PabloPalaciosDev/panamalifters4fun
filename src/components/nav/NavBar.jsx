@@ -2,15 +2,13 @@ import React from 'react';
 import { AppBar, Toolbar, IconButton, Button, Container, Menu, MenuItem, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
-import EmojiEventsOutlinedIcon from '@mui/icons-material/EmojiEventsOutlined';
 import BookOutlinedIcon from '@mui/icons-material/BookOutlined';
-import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 import AssignmentIndOutlinedIcon from '@mui/icons-material/AssignmentIndOutlined';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ManIcon from '@mui/icons-material/Man';
 import WomanIcon from '@mui/icons-material/Woman';
 import { Link } from 'react-router-dom';
-import logofpp from '../../assets/img/logo-fpp.png';
+import logopanamalifters from '../../assets/img/logo-panamalifters-notbg.png';
 
 export default function NavBar() {
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -37,7 +35,7 @@ export default function NavBar() {
 
     return (
         <nav>
-            <AppBar position="static" sx={{ width: '100%', backgroundColor: 'white' }}>
+            <AppBar position="fixed" sx={{ width: '100%', backgroundColor: '#153a4b' }}>
                 <Container maxWidth="xl">
                     <Toolbar
                         disableGutters
@@ -47,8 +45,8 @@ export default function NavBar() {
                             alignItems: 'center'
                         }}
                     >
-                        <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
-                            <img src={logofpp} alt="logo-fpp" style={{ width: '250px', padding: 15 }} />
+                        <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>
+                            <img src={logopanamalifters} alt="logo-fpp" style={{ width: '250px', padding: 15 }} />
                         </Link>
                         <Link
                             to="/"
@@ -59,8 +57,8 @@ export default function NavBar() {
                                 alignItems: 'center'
                             }}
                         >
-                            <HomeOutlinedIcon sx={{ color: 'red', fontSize: 35 }} />
-                            <Button sx={{ color: 'black', fontWeight: 'bold' }}>Inicio</Button>
+                            <HomeOutlinedIcon sx={{ color: 'white', fontSize: 35 }} />
+                            <Button sx={{ color: 'white', fontWeight: 'bold' }}>Inicio</Button>
                         </Link>
                         <Link
                             to="https://www.powerlifting.sport/fileadmin/ipf/data/rules/technical-rules/spanish/Reglas-esp-2024.pdf"
@@ -71,25 +69,13 @@ export default function NavBar() {
                                 alignItems: 'center'
                             }}
                         >
-                            <BookOutlinedIcon sx={{ color: 'red', fontSize: 30 }} />
-                            <Button sx={{ color: 'black', fontWeight: 'bold' }}>Reglamento IPF</Button>
+                            <BookOutlinedIcon sx={{ color: 'white', fontSize: 30 }} />
+                            <Button sx={{ color: 'white', fontWeight: 'bold' }}>Reglamento IPF</Button>
                         </Link>
-                        <Link
-                            to="/records"
-                            style={{
-                                textDecoration: 'none',
-                                color: 'white',
-                                display: 'flex',
-                                alignItems: 'center'
-                            }}
-                        >
-                            <EmojiEventsOutlinedIcon sx={{ color: 'red', fontSize: 35 }} />
-                            <Button sx={{ color: 'black', fontWeight: 'bold' }}>Records Panameños</Button>
-                        </Link>
-
-                        <Button sx={{ color: 'black', fontWeight: 'bold' }} onClick={handleClickAtletas}>
-                            <AssignmentIndOutlinedIcon sx={{ color: 'red', fontSize: 30 }} />
+                        <Button sx={{ color: 'white', fontWeight: 'bold' }} onClick={handleClickAtletas}>
+                            <AssignmentIndOutlinedIcon sx={{ color: 'white', fontSize: 30 }} />
                             Perfiles de Atletas
+                            <ExpandMoreIcon sx={{ color: 'white', fontSize: 35 }} />
                         </Button>
                         <Menu
                             id="menu-appbar"
@@ -111,13 +97,13 @@ export default function NavBar() {
                                     to="/atletas-masc"
                                     style={{
                                         textDecoration: 'none',
-                                        color: 'black',
+                                        color: 'white',
                                         fontWeight: 'bold',
                                         alignItems: 'center',
                                         display: 'flex'
                                     }}
                                 >
-                                    <ManIcon sx={{ color: 'red', fontSize: 30 }} />
+                                    <ManIcon sx={{ color: 'white', fontSize: 30 }} />
                                     Categoría Masculina
                                 </Link>
                             </MenuItem>
@@ -126,40 +112,27 @@ export default function NavBar() {
                                     to="/atletas-fem"
                                     style={{
                                         textDecoration: 'none',
-                                        color: 'black',
+                                        color: 'white',
                                         fontWeight: 'bold',
                                         alignItems: 'center',
                                         display: 'flex'
                                     }}
                                 >
-                                    <WomanIcon sx={{ color: 'red', fontSize: 30 }} />
+                                    <WomanIcon sx={{ color: 'white', fontSize: 30 }} />
                                     Categoría Femenina
                                 </Link>
                             </MenuItem>
                         </Menu>
-
-                        <Link
-                            to="/calendario"
-                            style={{
-                                textDecoration: 'none',
-                                color: 'white',
-                                display: 'flex',
-                                alignItems: 'center'
-                            }}
-                        >
-                            <CalendarMonthOutlinedIcon sx={{ color: 'red', fontSize: 30 }} />
-                            <Button sx={{ color: 'black', fontWeight: 'bold' }}>Calendario</Button>
-                        </Link>
                     </Toolbar>
 
                     <Toolbar
                         sx={{
                             display: { xs: 'flex', md: 'flex', xl: 'none' },
-                            justifyContent: 'space-between'
+                            justifyContent: 'space-between',
                         }}
                     >
                         <IconButton size="large" edge="start" color="inherit" aria-label="menu" onClick={handleClick}>
-                            <MenuIcon sx={{ color: 'red', fontSize: 40 }} />
+                            <MenuIcon sx={{ color: 'white', fontSize: 40 }} />
                         </IconButton>
                         <Menu
                             id="menu-appbar"
@@ -181,13 +154,13 @@ export default function NavBar() {
                                     to="/"
                                     style={{
                                         textDecoration: 'none',
-                                        color: 'black',
+                                        color: '#153a4b',
                                         fontWeight: 'bold',
                                         alignItems: 'center',
                                         display: 'flex'
                                     }}
                                 >
-                                    <HomeOutlinedIcon sx={{ color: 'red', fontSize: 35 }} />
+                                    <HomeOutlinedIcon sx={{ color: '#153a4b', fontSize: 35 }} />
                                     Inicio
                                 </Link>
                             </MenuItem>
@@ -196,36 +169,21 @@ export default function NavBar() {
                                     to="https://www.powerlifting.sport/fileadmin/ipf/data/rules/technical-rules/spanish/Reglas-esp-2024.pdf"
                                     style={{
                                         textDecoration: 'none',
-                                        color: 'black',
+                                        color: '#153a4b',
                                         fontWeight: 'bold',
                                         alignItems: 'center',
                                         display: 'flex'
                                     }}
                                 >
-                                    <BookOutlinedIcon sx={{ color: 'red', fontSize: 30 }} />
+                                    <BookOutlinedIcon sx={{ color: '#153a4b', fontSize: 30 }} />
                                     Reglamento IPF
                                 </Link>
                             </MenuItem>
                             <MenuItem onClick={handleClose}>
-                                <Link
-                                    to="/records"
-                                    style={{
-                                        textDecoration: 'none',
-                                        color: 'black',
-                                        fontWeight: 'bold',
-                                        alignItems: 'center',
-                                        display: 'flex'
-                                    }}
-                                >
-                                    <EmojiEventsOutlinedIcon sx={{ color: 'red', fontSize: 35 }} />
-                                    Records Panameños
-                                </Link>
-                            </MenuItem>
-                            <MenuItem onClick={handleClose}>
-                                <Typography sx={{ color: 'black', fontWeight: 'bold', display:'flex', alignItems: 'center' }} onClick={handleClickAtletas}>
-                                    <AssignmentIndOutlinedIcon sx={{ color: 'red', fontSize: 30 }} />
+                                <Typography sx={{ color: '#153a4b', fontWeight: 'bold', display:'flex', alignItems: 'center' }} onClick={handleClickAtletas}>
+                                    <AssignmentIndOutlinedIcon sx={{ color: '#153a4b', fontSize: 30 }} />
                                     Perfiles de Atletas
-                                    <ExpandMoreIcon sx={{ color: 'red', fontSize: 30 }} />
+                                    <ExpandMoreIcon sx={{ color: '#153a4b', fontSize: 30 }} />
                                 </Typography>
                                 <Menu
                                     id="menu-appbar"
@@ -247,13 +205,13 @@ export default function NavBar() {
                                             to="/atletas-masc"
                                             style={{
                                                 textDecoration: 'none',
-                                                color: 'black',
+                                                color: '#153a4b',
                                                 fontWeight: 'bold',
                                                 alignItems: 'center',
                                                 display: 'flex'
                                             }}
                                         >
-                                            <ManIcon sx={{ color: 'red', fontSize: 30 }} />
+                                            <ManIcon sx={{ color: '#153a4b', fontSize: 30 }} />
                                             Categoría Masculina
                                         </Link>
                                     </MenuItem>
@@ -262,36 +220,21 @@ export default function NavBar() {
                                             to="/atletas-fem"
                                             style={{
                                                 textDecoration: 'none',
-                                                color: 'black',
+                                                color: '#153a4b',
                                                 fontWeight: 'bold',
                                                 alignItems: 'center',
                                                 display: 'flex'
                                             }}
                                         >
-                                            <WomanIcon sx={{ color: 'red', fontSize: 30 }} />
+                                            <WomanIcon sx={{ color: '#153a4b', fontSize: 30 }} />
                                             Categoría Femenina
                                         </Link>
                                     </MenuItem>
                                 </Menu>
                             </MenuItem>
-                            <MenuItem onClick={handleClose}>
-                                <Link
-                                    to="/calendario"
-                                    style={{
-                                        textDecoration: 'none',
-                                        color: 'black',
-                                        fontWeight: 'bold',
-                                        alignItems: 'center',
-                                        display: 'flex'
-                                    }}
-                                >
-                                    <CalendarMonthOutlinedIcon sx={{ color: 'red', fontSize: 30 }} />
-                                    Calendario
-                                </Link>
-                            </MenuItem>
                         </Menu>
-                        <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
-                            <img src={logofpp} alt="logo-fpp" style={{ width: '60px' }} />
+                        <Link to="/" style={{ textDecoration: 'none', color: '#153a4b', padding:10 }}>
+                            <img src={logopanamalifters} alt="logo-fpp" style={{ width: '100px' }} />
                         </Link>
                     </Toolbar>
                 </Container>

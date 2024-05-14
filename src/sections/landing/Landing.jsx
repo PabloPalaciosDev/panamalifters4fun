@@ -16,7 +16,7 @@ export default function Landing() {
                     }}
                 >
                     <Typography sx={{ fontSize: { md: '40px', lg: '55px'} }} variant="h1" component="h1" color={'black'} className='font-body' fontFamily='Rubik Mono One, monospace'>
-                        Powerlifting Panamá
+                        Panama Lifters
                     </Typography>
                 </Grid>
                 <Grid item xs={12} sm={6}>

@@ -1,11 +1,10 @@
 import { Card, CardHeader, CardContent, Typography, Tooltip, CircularProgress, Box } from '@mui/material';
 import { Grid } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import DateRangeIcon from '@mui/icons-material/DateRange';
-import HeightIcon from '@mui/icons-material/Height';
 import CategoryIcon from '@mui/icons-material/Category';
 import StarIcon from '@mui/icons-material/Star';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import GroupsIcon from '@mui/icons-material/Groups';
 
 export default function ProfileFem() {
     const [atletas, setAtletas] = useState({});
@@ -22,9 +21,9 @@ export default function ProfileFem() {
                     if (!acc[categoria]) {
                         acc[categoria] = { masculino: [], femenino: [] }; // Inicializa las categorías con arreglos para ambos sexos
                     }
-                    if (sexo === 'Masculina') {
+                    if (sexo === 'MALE') {
                         acc[categoria].masculino.push(atleta);
-                    } else if (sexo === 'Femenina') {
+                    } else if (sexo === 'FEMALE') {
                         acc[categoria].femenino.push(atleta);
                     }
                     return acc;
@@ -53,16 +52,16 @@ export default function ProfileFem() {
         atletasPorSexo.femenino.forEach((atleta) => atletasFemeninos[categoria].push(atleta));
     });
     return (
-        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyItems: 'center' }}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyItems: 'center', marginTop: 30 }}>
             {isLoading ? (
-                <CircularProgress size={100} sx={{ marginTop: 50, color: 'red' }} />
+                <CircularProgress size={100} sx={{ marginTop: 50, color: '#153a4b' }} />
             ) : (
                 <Grid container spacing={5} display={'flex'} justifyContent={'center'} padding={2} alignItems={'center'}>
                     {Object.entries(atletasFemeninos).map(([categoria, atletas]) => (
                         <React.Fragment key={categoria}>
                             <Grid item xs={12} display={'flex'} justifyContent={'center'} textAlign={'center'}>
                                 {atletas.length != 0 ? (
-                                    <Typography fontWeight={'bold'} borderBottom={'5px dotted red'} variant="h5">
+                                    <Typography fontWeight={'bold'} borderBottom={'5px dotted #153a4b'} variant="h5">
                                         CATEGORÍA: {categoria}
                                     </Typography>
                                 ) : null}
@@ -79,33 +78,25 @@ export default function ProfileFem() {
                                         <br />
                                         <CardContent sx={{ padding: '1px' }}>
                                             <Grid container spacing={1} display={'flex'} justifyContent={'center'}>
-                                                <Tooltip title="Tiempo desde su primera competencia" arrow>
-                                                    <Grid item xs={4}>
-                                                        <DateRangeIcon sx={{ fontSize: 20, color: 'red' }} />
+                                                <Tooltip title="Equipo" arrow>
+                                                    <Grid item xs={12}>
+                                                        <GroupsIcon sx={{ fontSize: 20, color: '#153a4b' }} />
                                                         <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
-                                                            {atleta.tiempoentrenando}
-                                                        </Typography>
-                                                    </Grid>
-                                                </Tooltip>
-                                                <Tooltip title="Estatura" arrow>
-                                                    <Grid item xs={4}>
-                                                        <HeightIcon sx={{ fontSize: 20, color: 'red' }} />
-                                                        <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
-                                                            {atleta.estatura} m
+                                                            {atleta.team}
                                                         </Typography>
                                                     </Grid>
                                                 </Tooltip>
                                                 <Tooltip title="Categoría de Edad" arrow>
-                                                    <Grid item xs={4}>
-                                                        <CategoryIcon sx={{ fontSize: 20, color: 'red' }} />
+                                                    <Grid item xs={6}>
+                                                        <CategoryIcon sx={{ fontSize: 20, color: '#153a4b' }} />
                                                         <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
                                                             {atleta.catedad}
                                                         </Typography>
                                                     </Grid>
                                                 </Tooltip>
                                                 <Tooltip title="Mejor Total Oficial" arrow>
-                                                    <Grid item xs={4}>
-                                                        <StarIcon sx={{ fontSize: 20, color: 'red' }} />
+                                                    <Grid item xs={12}>
+                                                        <StarIcon sx={{ fontSize: 20, color: '#153a4b' }} />
                                                         <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
                                                             Total Oficial
                                                             <br />
@@ -113,13 +104,23 @@ export default function ProfileFem() {
                                                         </Typography>
                                                     </Grid>
                                                 </Tooltip>
-                                                <Tooltip title="Mejor Total No Oficial" arrow>
-                                                    <Grid item xs={4}>
-                                                        <StarIcon sx={{ fontSize: 20, color: 'red' }} />
+                                                <Tooltip title="Puntos IPF" arrow>
+                                                    <Grid item xs={6}>
+                                                        <StarIcon sx={{ fontSize: 20, color: '#153a4b' }} />
                                                         <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
-                                                            Total No Oficial
+                                                            Puntos IPF
                                                             <br />
-                                                            {atleta.totalnofpp} Kg
+                                                            {atleta.ipfpoints}
+                                                        </Typography>
+                                                    </Grid>
+                                                </Tooltip>
+                                                <Tooltip title="Puntos Wilks" arrow>
+                                                    <Grid item xs={6}>
+                                                        <StarIcon sx={{ fontSize: 20, color: '#153a4b' }} />
+                                                        <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
+                                                            Puntos Wilks
+                                                            <br />
+                                                            {atleta.wilkspoints}
                                                         </Typography>
                                                     </Grid>
                                                 </Tooltip>
