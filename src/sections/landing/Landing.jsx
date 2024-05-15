@@ -4,7 +4,7 @@ import Banner from './banner/Banner';
 export default function Landing() {
     return (
         <>
-            <Grid container sx={{ display: { xs: 'none', md: 'flex' } }}>
+            <Grid container sx={{ display: { xs: 'none', md: 'flex' }}}>
                 <Grid
                     item
                     xs={12}
