@@ -93,7 +93,7 @@ export default function ProfileMasc() {
                                 padding: '15px 20px'
                             }}
                         >
-                            <Typography fontWeight={'bold'} variant="h4">
+                            <Typography fontWeight={'bold'} variant="h5">
                                 Selecciona la Categoría
                             </Typography>
                             <FormControl sx={{ m: 1, minWidth: 120 }}>
@@ -216,9 +216,15 @@ export default function ProfileMasc() {
                         </Grid>
                     )}
                     {atletasSeleccionados.length === 0 ? (
-                        <Typography fontWeight={'bold'} variant="h4">
-                            No hay atletas en esta categoría o no se ha seleccionado una categoría
-                        </Typography>
+                        <Grid item xs={12} display={'flex'} justifyContent={'center'} textAlign={'center'} alignContent={'center'}>
+                            <Typography fontWeight={'bold'} variant="h6" sx={{
+                                color: '#153a4b',
+                                marginTop: '10px',
+                                borderBottom: '1px solid #153a4b',
+                            }}>
+                                No hay atletas en esta categoría o no se ha seleccionado una categoría
+                            </Typography>
+                        </Grid>
                     ) : (
                         atletasSeleccionados.map((atleta) => (
                             <Grid item xs={12} sm={6} md={4} key={atleta.nombre}>
