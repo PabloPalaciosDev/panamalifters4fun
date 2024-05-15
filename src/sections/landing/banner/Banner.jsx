@@ -5,10 +5,11 @@ import mattew from '../../../assets/img/mattew-portada.jpeg';
 import ramiro from '../../../assets/img/ramiro-portada.png';
 import enzo from '../../../assets/img/enzo-portada.jpeg';
 import leo from '../../../assets/img/leo-portada.jpg';
+import pablo from '../../../assets/img/pablo-portada.jpeg';
 
 export default function Banner() {
     // Lista de imágenes para alternar
-    const images = useMemo(() => [juan, mattew, ramiro, enzo, leo], []);
+    const images = useMemo(() => [juan, mattew, ramiro, enzo, leo, pablo], []);
     const randomIndex = Math.floor(Math.random() * images.length);
 
     // Estado para manejar la imagen actual
@@ -22,7 +23,7 @@ export default function Banner() {
             currentIndex = (currentIndex + 1) % images.length;
             setCurrentImage(images[currentIndex]);
         };
-        const interval = setInterval(changeImage, 4000);
+        const interval = setInterval(changeImage, 2500);
 
         // Limpieza al desmontar el componente
         return () => clearInterval(interval);
