@@ -1,4 +1,17 @@
-import { Card, CardHeader, CardContent, Typography, Tooltip, CircularProgress, Box, FormControl, Select, MenuItem, Stack } from '@mui/material';
+import {
+    Card,
+    CardHeader,
+    CardContent,
+    Typography,
+    Tooltip,
+    CircularProgress,
+    Box,
+    FormControl,
+    Select,
+    MenuItem,
+    Stack,
+    CardMedia
+} from '@mui/material';
 import { Grid } from '@mui/material';
 import { useEffect, useState } from 'react';
 import CategoryIcon from '@mui/icons-material/Category';
@@ -66,118 +79,122 @@ export default function ProfileFem() {
             ) : (
                 <Grid container spacing={5} display={'flex'} justifyContent={'center'} padding={2} alignItems={'center'}>
                     <Grid item xs={12} display={'flex'} justifyContent={'center'} textAlign={'center'} alignContent={'center'}>
-                    <Stack spacing={2} direction="row" alignItems="center"sx={{
+                        <Stack
+                            spacing={2}
+                            direction="row"
+                            alignItems="center"
+                            sx={{
                                 backgroundColor: '#153a4b',
                                 color: 'white',
                                 borderRadius: '25px',
                                 width: 'fit-content',
                                 marginTop: '10px',
                                 padding: '15px 20px'
-                            }}>
+                            }}
+                        >
                             <Typography fontWeight={'bold'} variant="h5">
                                 Selecciona la Categoría
                             </Typography>
-                        <FormControl sx={{ m: 1, minWidth: 120 }}>
-
-                            <Select
-                                labelId="demo-simple-select-label"
-                                id="demo-simple-select"
-                                value={categoria}
-                                label="Categoría"
-                                onChange={(e) => handleChange(e)}
-                                sx={{
-                                    fontWeight: 'bold',
-                                    color: '#153a4b',
-                                    width: 'fit-content',
-                                    padding: '5px 10px',
-                                    border: '1px solid white',
-                                    borderRadius: '10px',
-                                    backgroundColor: 'white',
-                                    fontSize: '1.2rem'
-                                }}
-                            >
-                                <MenuItem
-                                    value={'43'}
+                            <FormControl sx={{ m: 1, minWidth: 120 }}>
+                                <Select
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    value={categoria}
+                                    label="Categoría"
+                                    onChange={(e) => handleChange(e)}
                                     sx={{
                                         fontWeight: 'bold',
                                         color: '#153a4b',
+                                        width: 'fit-content',
+                                        padding: '5px 10px',
+                                        border: '1px solid white',
+                                        borderRadius: '10px',
+                                        backgroundColor: 'white',
                                         fontSize: '1.2rem'
                                     }}
                                 >
-                                    - 43
-                                </MenuItem>
-                                <MenuItem
-                                    value={'52'}
-                                    sx={{
-                                        fontWeight: 'bold',
-                                        color: '#153a4b',
-                                        fontSize: '1.2rem'
-                                    }}
-                                >
-                                    - 52
-                                </MenuItem>
-                                <MenuItem
-                                    value={'57'}
-                                    sx={{
-                                        fontWeight: 'bold',
-                                        color: '#153a4b',
-                                        fontSize: '1.2rem'
-                                    }}
-                                >
-                                    - 57
-                                </MenuItem>
-                                <MenuItem
-                                    value={'63'}
-                                    sx={{
-                                        fontWeight: 'bold',
-                                        color: '#153a4b',
-                                        fontSize: '1.2rem'
-                                    }}
-                                >
-                                    - 63
-                                </MenuItem>
-                                <MenuItem
-                                    value={'69'}
-                                    sx={{
-                                        fontWeight: 'bold',
-                                        color: '#153a4b',
-                                        fontSize: '1.2rem'
-                                    }}
-                                >
-                                    - 69
-                                </MenuItem>
-                                <MenuItem
-                                    value={'76'}
-                                    sx={{
-                                        fontWeight: 'bold',
-                                        color: '#153a4b',
-                                        fontSize: '1.2rem'
-                                    }}
-                                >
-                                    - 76
-                                </MenuItem>
-                                <MenuItem
-                                    value={'84'}
-                                    sx={{
-                                        fontWeight: 'bold',
-                                        color: '#153a4b',
-                                        fontSize: '1.2rem'
-                                    }}
-                                >
-                                    - 84
-                                </MenuItem>
-                                <MenuItem
-                                    value={'84+'}
-                                    sx={{
-                                        fontWeight: 'bold',
-                                        color: '#153a4b',
-                                        fontSize: '1.2rem'
-                                    }}
-                                >
-                                    + 84
-                                </MenuItem>
-                            </Select>
-                        </FormControl>
+                                    <MenuItem
+                                        value={'43'}
+                                        sx={{
+                                            fontWeight: 'bold',
+                                            color: '#153a4b',
+                                            fontSize: '1.2rem'
+                                        }}
+                                    >
+                                        - 43
+                                    </MenuItem>
+                                    <MenuItem
+                                        value={'52'}
+                                        sx={{
+                                            fontWeight: 'bold',
+                                            color: '#153a4b',
+                                            fontSize: '1.2rem'
+                                        }}
+                                    >
+                                        - 52
+                                    </MenuItem>
+                                    <MenuItem
+                                        value={'57'}
+                                        sx={{
+                                            fontWeight: 'bold',
+                                            color: '#153a4b',
+                                            fontSize: '1.2rem'
+                                        }}
+                                    >
+                                        - 57
+                                    </MenuItem>
+                                    <MenuItem
+                                        value={'63'}
+                                        sx={{
+                                            fontWeight: 'bold',
+                                            color: '#153a4b',
+                                            fontSize: '1.2rem'
+                                        }}
+                                    >
+                                        - 63
+                                    </MenuItem>
+                                    <MenuItem
+                                        value={'69'}
+                                        sx={{
+                                            fontWeight: 'bold',
+                                            color: '#153a4b',
+                                            fontSize: '1.2rem'
+                                        }}
+                                    >
+                                        - 69
+                                    </MenuItem>
+                                    <MenuItem
+                                        value={'76'}
+                                        sx={{
+                                            fontWeight: 'bold',
+                                            color: '#153a4b',
+                                            fontSize: '1.2rem'
+                                        }}
+                                    >
+                                        - 76
+                                    </MenuItem>
+                                    <MenuItem
+                                        value={'84'}
+                                        sx={{
+                                            fontWeight: 'bold',
+                                            color: '#153a4b',
+                                            fontSize: '1.2rem'
+                                        }}
+                                    >
+                                        - 84
+                                    </MenuItem>
+                                    <MenuItem
+                                        value={'84+'}
+                                        sx={{
+                                            fontWeight: 'bold',
+                                            color: '#153a4b',
+                                            fontSize: '1.2rem'
+                                        }}
+                                    >
+                                        + 84
+                                    </MenuItem>
+                                </Select>
+                            </FormControl>
                         </Stack>
                     </Grid>
                     {categoria === '' ? null : (
@@ -189,14 +206,18 @@ export default function ProfileFem() {
                     )}
                     {atletasSeleccionados.length === 0 ? (
                         <Grid item xs={12} display={'flex'} justifyContent={'center'} textAlign={'center'} alignContent={'center'}>
-                        <Typography fontWeight={'bold'} variant="h6" sx={{
-                            color: '#153a4b',
-                            marginTop: '10px',
-                            borderBottom: '1px solid #153a4b',
-                        }}>
-                            No hay atletas en esta categoría o no se ha seleccionado una categoría
-                        </Typography>
-                    </Grid>
+                            <Typography
+                                fontWeight={'bold'}
+                                variant="h6"
+                                sx={{
+                                    color: '#153a4b',
+                                    marginTop: '10px',
+                                    borderBottom: '1px solid #153a4b'
+                                }}
+                            >
+                                No hay atletas en esta categoría o no se ha seleccionado una categoría
+                            </Typography>
+                        </Grid>
                     ) : (
                         atletasSeleccionados.map((atleta) => (
                             <Grid item xs={12} sm={6} md={4} key={atleta.nombre}>
@@ -206,12 +227,15 @@ export default function ProfileFem() {
                                         title={atleta.nombre}
                                         subheader={atleta.edad + ' años'}
                                     />
-                                    {atleta.img ? ( 
-                                        <img src={atleta.img} alt={atleta.nombre} style={{ width: '200px', height: 'auto', borderRadius: '100px' }} />
-                                    ) : (
-                                        <AccountCircleIcon
-                                            sx={{ fontSize: 200, color: '#153a4b', margin: 'auto', display: 'block' }}
+                                    {atleta.img ? (
+                                        <CardMedia
+                                            component="img"
+                                            image={atleta.img}
+                                            style={{ objectFit: 'scale-down'}}
+                                            height={200}
                                         />
+                                    ) : (
+                                        <AccountCircleIcon sx={{ fontSize: 200, color: '#153a4b', margin: 'auto', display: 'block' }} />
                                     )}
                                     <br />
                                     <CardContent sx={{ padding: '1px' }}>

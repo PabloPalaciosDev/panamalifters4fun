@@ -217,11 +217,15 @@ export default function ProfileMasc() {
                     )}
                     {atletasSeleccionados.length === 0 ? (
                         <Grid item xs={12} display={'flex'} justifyContent={'center'} textAlign={'center'} alignContent={'center'}>
-                            <Typography fontWeight={'bold'} variant="h6" sx={{
-                                color: '#153a4b',
-                                marginTop: '10px',
-                                borderBottom: '1px solid #153a4b',
-                            }}>
+                            <Typography
+                                fontWeight={'bold'}
+                                variant="h6"
+                                sx={{
+                                    color: '#153a4b',
+                                    marginTop: '10px',
+                                    borderBottom: '1px solid #153a4b'
+                                }}
+                            >
                                 No hay atletas en esta categoría o no se ha seleccionado una categoría
                             </Typography>
                         </Grid>
@@ -234,7 +238,16 @@ export default function ProfileMasc() {
                                         title={atleta.nombre}
                                         subheader={atleta.edad + ' años'}
                                     />
-                                    <AccountCircleIcon sx={{ fontSize: 150, color: '#0049B0' }} />
+                                    {atleta.img ? (
+                                        <img
+                                            src={atleta.img}
+                                            alt={atleta.nombre}
+                                            style={{ objectFit: 'scale-down'}}
+                                            width="200xp"
+                                        />
+                                    ) : (
+                                        <AccountCircleIcon sx={{ fontSize: 200, color: '#153a4b', margin: 'auto', display: 'block' }} />
+                                    )}
                                     <br />
                                     <CardContent sx={{ padding: '1px' }}>
                                         <Grid container spacing={1} display={'flex'} justifyContent={'center'}>

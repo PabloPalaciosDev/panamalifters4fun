@@ -13,10 +13,10 @@ import logopanamalifters from '../../assets/img/logo-panamalifters-notbg.png';
 export default function NavBar() {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [anchorElAtletas, setAnchorElAtletas] = React.useState(null);
-    const [anchorElTops, setAnchorElTops] = React.useState(null);
+    //const [anchorElTops, setAnchorElTops] = React.useState(null);
     const open = Boolean(anchorEl);
     const openAtletas = Boolean(anchorElAtletas);
-    const openTops = Boolean(anchorElTops);
+    //const openTops = Boolean(anchorElTops);
 
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -34,7 +34,7 @@ export default function NavBar() {
     const handleCloseAtletas = () => {
         setAnchorElAtletas(null);
     };
-
+/*
     const handleClickTops = (event) => {
         event.stopPropagation();
         setAnchorElTops(event.currentTarget);
@@ -43,6 +43,7 @@ export default function NavBar() {
     const handleCloseTops = () => {
         setAnchorElTops(null);
     }
+    */
 
     return (
         <nav>
@@ -84,7 +85,7 @@ export default function NavBar() {
                             <Button sx={{ color: 'white', fontWeight: 'bold' }}>Reglamento IPF</Button>
                         </Link>
 
-                        <Button sx={{ color: 'white', fontWeight: 'bold' }} onClick={handleClickTops}>
+                        {/*<Button sx={{ color: 'white', fontWeight: 'bold' }} onClick={handleClickTops}>
                             <AssignmentIndOutlinedIcon sx={{ color: 'white', fontSize: 30 }} />
                             Resultados
                             <ExpandMoreIcon sx={{ color: 'white', fontSize: 35 }} />
@@ -132,7 +133,7 @@ export default function NavBar() {
                                     Top 10 Femenino
                                 </Link>
                             </MenuItem>
-                        </Menu>
+                        </Menu>*/}
                         
                         <Button sx={{ color: 'white', fontWeight: 'bold' }} onClick={handleClickAtletas}>
                             <AssignmentIndOutlinedIcon sx={{ color: 'white', fontSize: 30 }} />
@@ -241,6 +242,7 @@ export default function NavBar() {
                                     Reglamento IPF
                                 </Link>
                             </MenuItem>
+                            {/*
                             <MenuItem onClick={handleClose}>
                                 <Typography sx={{ color: '#153a4b', fontWeight: 'bold', display:'flex', alignItems: 'center' }} onClick={handleClickTops}>
                                     <AssignmentIndOutlinedIcon sx={{ color: '#153a4b', fontSize: 30 }} />
@@ -292,6 +294,7 @@ export default function NavBar() {
                                     </MenuItem>
                                 </Menu>
                             </MenuItem>
+                                        */}
                             
                             <MenuItem onClick={handleClose}>
                                 <Typography sx={{ color: '#153a4b', fontWeight: 'bold', display:'flex', alignItems: 'center' }} onClick={handleClickAtletas}>
