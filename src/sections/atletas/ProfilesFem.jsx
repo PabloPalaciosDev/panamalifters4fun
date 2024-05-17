@@ -206,7 +206,13 @@ export default function ProfileFem() {
                                         title={atleta.nombre}
                                         subheader={atleta.edad + ' años'}
                                     />
-                                    <AccountCircleIcon sx={{ fontSize: 150, color: '#0049B0' }} />
+                                    {atleta.img ? ( 
+                                        <img src={atleta.img} alt={atleta.nombre} style={{ width: '200px', height: 'auto', borderRadius: '100px' }} />
+                                    ) : (
+                                        <AccountCircleIcon
+                                            sx={{ fontSize: 200, color: '#153a4b', margin: 'auto', display: 'block' }}
+                                        />
+                                    )}
                                     <br />
                                     <CardContent sx={{ padding: '1px' }}>
                                         <Grid container spacing={1} display={'flex'} justifyContent={'center'}>

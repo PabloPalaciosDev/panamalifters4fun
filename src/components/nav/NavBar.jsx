@@ -13,8 +13,10 @@ import logopanamalifters from '../../assets/img/logo-panamalifters-notbg.png';
 export default function NavBar() {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [anchorElAtletas, setAnchorElAtletas] = React.useState(null);
+    const [anchorElTops, setAnchorElTops] = React.useState(null);
     const open = Boolean(anchorEl);
     const openAtletas = Boolean(anchorElAtletas);
+    const openTops = Boolean(anchorElTops);
 
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -32,6 +34,15 @@ export default function NavBar() {
     const handleCloseAtletas = () => {
         setAnchorElAtletas(null);
     };
+
+    const handleClickTops = (event) => {
+        event.stopPropagation();
+        setAnchorElTops(event.currentTarget);
+    }
+
+    const handleCloseTops = () => {
+        setAnchorElTops(null);
+    }
 
     return (
         <nav>
@@ -72,6 +83,57 @@ export default function NavBar() {
                             <BookOutlinedIcon sx={{ color: 'white', fontSize: 30 }} />
                             <Button sx={{ color: 'white', fontWeight: 'bold' }}>Reglamento IPF</Button>
                         </Link>
+
+                        <Button sx={{ color: 'white', fontWeight: 'bold' }} onClick={handleClickTops}>
+                            <AssignmentIndOutlinedIcon sx={{ color: 'white', fontSize: 30 }} />
+                            Resultados
+                            <ExpandMoreIcon sx={{ color: 'white', fontSize: 35 }} />
+                        </Button>
+                        <Menu
+                            id="menu-appbar-2"
+                            anchorEl={anchorElTops}
+                            anchorOrigin={{
+                                vertical: 'bottom',
+                                horizontal: 'right'
+                            }}
+                            keepMounted
+                            transformOrigin={{
+                                vertical: 'top',
+                                horizontal: 'right'
+                            }}
+                            open={openTops}
+                            onClose={handleCloseTops}
+                        >
+                            <MenuItem onClick={handleCloseTops}>
+                                <Link
+                                    to="/atletas-masc/top10"
+                                    style={{
+                                        textDecoration: 'none',
+                                        color: '#153A4B',
+                                        fontWeight: 'bold',
+                                        alignItems: 'center',
+                                        display: 'flex'
+                                    }}
+                                >
+                                    Top 10 Masculino
+                                </Link>
+                            </MenuItem>
+                            <MenuItem onClick={handleCloseTops}>
+                                <Link
+                                    to="/atletas-fem/top10"
+                                    style={{
+                                        textDecoration: 'none',
+                                        color: '#153A4B',
+                                        fontWeight: 'bold',
+                                        alignItems: 'center',
+                                        display: 'flex'
+                                    }}
+                                >
+                                    Top 10 Femenino
+                                </Link>
+                            </MenuItem>
+                        </Menu>
+                        
                         <Button sx={{ color: 'white', fontWeight: 'bold' }} onClick={handleClickAtletas}>
                             <AssignmentIndOutlinedIcon sx={{ color: 'white', fontSize: 30 }} />
                             Perfiles de Atletas
@@ -179,6 +241,58 @@ export default function NavBar() {
                                     Reglamento IPF
                                 </Link>
                             </MenuItem>
+                            <MenuItem onClick={handleClose}>
+                                <Typography sx={{ color: '#153a4b', fontWeight: 'bold', display:'flex', alignItems: 'center' }} onClick={handleClickTops}>
+                                    <AssignmentIndOutlinedIcon sx={{ color: '#153a4b', fontSize: 30 }} />
+                                    Resultados
+                                    <ExpandMoreIcon sx={{ color: '#153a4b', fontSize: 30 }} />
+                                </Typography>
+                                <Menu
+                                    id="menu-appbar-2"
+                                    anchorEl={anchorElTops}
+                                    anchorOrigin={{
+                                        vertical: 'bottom',
+                                        horizontal: 'right'
+                                    }}
+                                    keepMounted
+                                    transformOrigin={{
+                                        vertical: 'top',
+                                        horizontal: 'right'
+                                    }}
+                                    open={openTops}
+                                    onClose={handleCloseTops}
+                                >
+                                    <MenuItem onClick={(event) => handleCloseTops(event)}>
+                                        <Link
+                                            to="/atletas-masc/top10"
+                                            style={{
+                                                textDecoration: 'none',
+                                                color: '#153a4b',
+                                                fontWeight: 'bold',
+                                                alignItems: 'center',
+                                                display: 'flex'
+                                            }}
+                                        >
+                                            Top 10 Masculino
+                                        </Link>
+                                    </MenuItem>
+                                    <MenuItem onClick={(event) => handleCloseTops(event)}>
+                                        <Link
+                                            to="/atletas-fem/top10"
+                                            style={{
+                                                textDecoration: 'none',
+                                                color: '#153a4b',
+                                                fontWeight: 'bold',
+                                                alignItems: 'center',
+                                                display: 'flex'
+                                            }}
+                                        >
+                                            Top 10 Femenino
+                                        </Link>
+                                    </MenuItem>
+                                </Menu>
+                            </MenuItem>
+                            
                             <MenuItem onClick={handleClose}>
                                 <Typography sx={{ color: '#153a4b', fontWeight: 'bold', display:'flex', alignItems: 'center' }} onClick={handleClickAtletas}>
                                     <AssignmentIndOutlinedIcon sx={{ color: '#153a4b', fontSize: 30 }} />
