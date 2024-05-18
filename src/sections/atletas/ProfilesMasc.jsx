@@ -26,7 +26,7 @@ export default function ProfileMasc() {
 
     useEffect(() => {
         fetch(
-            'https://script.googleusercontent.com/macros/echo?user_content_key=M1PfDyhy7hl2skr1aF9waSaXKflJs5eJgypKVz9sbb9P2j_WcbtVRt0p3PD1oaGFgSqjRjRJ7greWBe6OFwIu60JCIoeMA1im5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnDUkpXiR-LokQSZU5vqRbk_EuETLPNCZVrWLNurcEqvXnwE4XyJOXIzH0reijr7fgyBuZq1p5noMbiPXg-rCb-PvzN_Zk_CcJA&lib=MQCNB6nzcXOwY7GhoceHgX9xbyX9ou6FY'
+            'https://script.google.com/macros/s/AKfycbzMwZqRB1eONV1RmFjIDgEVdcm-MPVaOANTA7JpU1LbfZLHGFTQM36JejwXbQYGBmFD/exec'
         )
             .then((response) => response.json())
             .then((data) => {
