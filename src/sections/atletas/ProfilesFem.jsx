@@ -221,6 +221,7 @@ export default function ProfileFem() {
                                     ipfpoints={atleta.ipfpoints}
                                     wilkspoints={atleta.wilkspoints}
                                     dotspints={atleta.dotspints}
+                                    place={atleta.place}
                                 />
                             </Grid>
                         ))
