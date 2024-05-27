@@ -6,7 +6,7 @@ import StarIcon from '@mui/icons-material/Star';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import GroupsIcon from '@mui/icons-material/Groups';
 
-export default function AtletasMascTop10() {
+export default function AtletasFemTop10() {
     const [atletas, setAtletas] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     let atletasMasculinos = [];
@@ -26,7 +26,7 @@ export default function AtletasMascTop10() {
 
     Object.entries(atletas).forEach(([catsex, atletas]) => {
         catsex;
-        if (atletas.catsex === 'MALE') atletasMasculinos.push(atletas);
+        if (atletas.catsex === 'FEMALE') atletasMasculinos.push(atletas);
     });
 
     return (
