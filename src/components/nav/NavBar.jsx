@@ -242,7 +242,6 @@ export default function NavBar() {
                                     Reglamento IPF
                                 </Link>
                             </MenuItem>
-                            {/*
                             <MenuItem onClick={handleClose}>
                                 <Typography sx={{ color: '#153a4b', fontWeight: 'bold', display:'flex', alignItems: 'center' }} onClick={handleClickTops}>
                                     <AssignmentIndOutlinedIcon sx={{ color: '#153a4b', fontSize: 30 }} />
@@ -294,7 +293,7 @@ export default function NavBar() {
                                     </MenuItem>
                                 </Menu>
                             </MenuItem>
-                                        */}
+                                        
                             
                             <MenuItem onClick={handleClose}>
                                 <Typography sx={{ color: '#153a4b', fontWeight: 'bold', display:'flex', alignItems: 'center' }} onClick={handleClickAtletas}>
