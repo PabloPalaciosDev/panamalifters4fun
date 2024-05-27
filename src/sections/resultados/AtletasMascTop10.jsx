@@ -1,10 +1,7 @@
-import { Card, CardHeader, CardContent, Typography, Tooltip, CircularProgress, Box } from '@mui/material';
+import { Typography, CircularProgress, Box } from '@mui/material';
 import { Grid } from '@mui/material';
 import { useEffect, useState } from 'react';
-import CategoryIcon from '@mui/icons-material/Category';
-import StarIcon from '@mui/icons-material/Star';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import GroupsIcon from '@mui/icons-material/Groups';
+import CardAtletasTops from '../../components/CardAtletasTop';
 
 export default function AtletasMascTop10() {
     const [atletas, setAtletas] = useState({});
@@ -28,66 +25,37 @@ export default function AtletasMascTop10() {
         catsex;
         if (atletas.catsex === 'MALE') atletasMasculinos.push(atletas);
     });
-
     return (
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyItems: 'center' }}>
             {isLoading ? (
                 <CircularProgress size={100} sx={{ marginTop: 50, color: '#153a4b' }} />
             ) : atletasMasculinos.length > 0 ? (
                 <Grid container spacing={5} display={'flex'} justifyContent={'center'} padding={2} alignItems={'center'}>
+                    <Grid item xs={12} display={'flex'} justifyContent={'center'} textAlign={'center'} alignContent={'center'}>
+                        <Typography
+                            fontWeight={'bold'}
+                            variant="h3"
+                            sx={{
+                                color: '#153a4b',
+                                marginTop: '10px',
+                                borderBottom: '3px solid #153a4b'
+                            }}
+                        >
+                            Top 10 Atletas Masculinos
+                        </Typography>
+                    </Grid>
                     {atletasMasculinos.map((atleta, index) => (
                         <Grid item xs={12} sm={6} md={4} key={index}>
-                            <Card elevation={5} sx={{ borderRadius: '25px' }}>
-                                <CardHeader
-                                    sx={{ textTransform: 'uppercase' }}
-                                    title={index + 1 + '° ' + atleta.nombre}
-                                    subheader={atleta.edad + ' años'}
-                                />
-                                <AccountCircleIcon sx={{ fontSize: 150, color: '#0049B0' }} />
-                                <br />
-                                <CardContent sx={{ padding: '1px' }}>
-                                    <CardContent sx={{ padding: '1px' }}>
-                                        <Grid container spacing={1} display={'flex'} justifyContent={'center'}>
-                                            <Tooltip title="Equipo" arrow>
-                                                <Grid item xs={6}>
-                                                    <GroupsIcon sx={{ fontSize: 20, color: '#153a4b' }} />
-                                                    <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
-                                                        {atleta.team}
-                                                    </Typography>
-                                                </Grid>
-                                            </Tooltip>
-                                            <Tooltip title="Categoría de Edad" arrow>
-                                                <Grid item xs={12}>
-                                                    <CategoryIcon sx={{ fontSize: 20, color: '#153a4b' }} />
-                                                    <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
-                                                        {atleta.catedad}
-                                                    </Typography>
-                                                </Grid>
-                                            </Tooltip>
-                                            <Tooltip title="Mejor Total Oficial" arrow>
-                                                <Grid item xs={12} md={6}>
-                                                    <StarIcon sx={{ fontSize: 20, color: '#153a4b' }} />
-                                                    <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
-                                                        Total Oficial
-                                                        <br />
-                                                        {atleta.totalfpp} Kg
-                                                    </Typography>
-                                                </Grid>
-                                            </Tooltip>
-                                            <Tooltip title="Puntos IPF" arrow>
-                                                <Grid item xs={12} md={6}>
-                                                    <StarIcon sx={{ fontSize: 20, color: '#153a4b' }} />
-                                                    <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
-                                                        Puntos IPF
-                                                        <br />
-                                                        {atleta.ipfpoints}
-                                                    </Typography>
-                                                </Grid>
-                                            </Tooltip>
-                                        </Grid>
-                                    </CardContent>
-                                </CardContent>
-                            </Card>
+                            <CardAtletasTops
+                                img={atleta.img}
+                                nombre={atleta.nombre}
+                                edad={atleta.edad}
+                                team={atleta.team}
+                                catedad={atleta.catedad}
+                                totalfpp={atleta.totalfpp}
+                                ipfpoints={atleta.ipfpoints}
+                                posicion={index + 1}
+                            />
                         </Grid>
                     ))}
                 </Grid>

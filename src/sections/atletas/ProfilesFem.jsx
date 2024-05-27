@@ -1,23 +1,15 @@
 import {
-    Card,
-    CardHeader,
-    CardContent,
     Typography,
-    Tooltip,
     CircularProgress,
     Box,
     FormControl,
     Select,
     MenuItem,
     Stack,
-    CardMedia
 } from '@mui/material';
 import { Grid } from '@mui/material';
-import { useEffect, useState } from 'react';
-import CategoryIcon from '@mui/icons-material/Category';
-import StarIcon from '@mui/icons-material/Star';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import GroupsIcon from '@mui/icons-material/Groups';
+import { useEffect, useState } from 'react'
+import CardAtletas from '../../components/CardAtletas';
 
 export default function ProfileFem() {
     const [atletas, setAtletas] = useState({});
@@ -25,9 +17,7 @@ export default function ProfileFem() {
     const [categoria, setCategoria] = useState('');
     const [atletasSeleccionados, setAtletasSeleccionados] = useState([]);
     useEffect(() => {
-        fetch(
-            'https://script.google.com/macros/s/AKfycbzMwZqRB1eONV1RmFjIDgEVdcm-MPVaOANTA7JpU1LbfZLHGFTQM36JejwXbQYGBmFD/exec'
-        )
+        fetch('https://script.google.com/macros/s/AKfycbzMwZqRB1eONV1RmFjIDgEVdcm-MPVaOANTA7JpU1LbfZLHGFTQM36JejwXbQYGBmFD/exec')
             .then((response) => response.json())
             .then((data) => {
                 const agrupadosPorCategoriaYSexo = data.reduce((acc, atleta) => {
@@ -221,84 +211,17 @@ export default function ProfileFem() {
                     ) : (
                         atletasSeleccionados.map((atleta) => (
                             <Grid item xs={12} sm={6} md={4} key={atleta.nombre}>
-                                <Card elevation={5} sx={{ borderRadius: '25px' }}>
-                                    <CardHeader
-                                        sx={{ textTransform: 'uppercase' }}
-                                        title={atleta.nombre}
-                                        subheader={atleta.edad + ' años'}
-                                    />
-                                    {atleta.img ? (
-                                        <CardMedia
-                                            component="img"
-                                            image={atleta.img}
-                                            style={{ objectFit: 'scale-down'}}
-                                            height={200}
-                                        />
-                                    ) : (
-                                        <AccountCircleIcon sx={{ fontSize: 200, color: '#153a4b', margin: 'auto', display: 'block' }} />
-                                    )}
-                                    <br />
-                                    <CardContent sx={{ padding: '1px' }}>
-                                        <Grid container spacing={1} display={'flex'} justifyContent={'center'}>
-                                            <Tooltip title="Equipo" arrow>
-                                                <Grid item xs={12}>
-                                                    <GroupsIcon sx={{ fontSize: 20, color: '#153a4b' }} />
-                                                    <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
-                                                        {atleta.team}
-                                                    </Typography>
-                                                </Grid>
-                                            </Tooltip>
-                                            <Tooltip title="Categoría de Edad" arrow>
-                                                <Grid item xs={6}>
-                                                    <CategoryIcon sx={{ fontSize: 20, color: '#153a4b' }} />
-                                                    <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
-                                                        {atleta.catedad}
-                                                    </Typography>
-                                                </Grid>
-                                            </Tooltip>
-                                            <Tooltip title="Mejor Total Oficial" arrow>
-                                                <Grid item xs={12}>
-                                                    <StarIcon sx={{ fontSize: 20, color: '#153a4b' }} />
-                                                    <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
-                                                        Total Oficial
-                                                        <br />
-                                                        {atleta.totalfpp} Kg
-                                                    </Typography>
-                                                </Grid>
-                                            </Tooltip>
-                                            <Tooltip title="Puntos IPF" arrow>
-                                                <Grid item xs={6}>
-                                                    <StarIcon sx={{ fontSize: 20, color: '#153a4b' }} />
-                                                    <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
-                                                        Puntos IPF
-                                                        <br />
-                                                        {atleta.ipfpoints}
-                                                    </Typography>
-                                                </Grid>
-                                            </Tooltip>
-                                            <Tooltip title="Puntos Wilks" arrow>
-                                                <Grid item xs={6}>
-                                                    <StarIcon sx={{ fontSize: 20, color: '#153a4b' }} />
-                                                    <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
-                                                        Puntos Wilks
-                                                        <br />
-                                                        {atleta.wilkspoints}
-                                                    </Typography>
-                                                </Grid>
-                                            </Tooltip>
-                                            <Tooltip title="Puntos Dots" arrow>
-                                                <Grid item xs={6}>
-                                                    <StarIcon sx={{ fontSize: 20, color: '#153a4b' }} />
-                                                    <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
-                                                        Puntos Dots
-                                                        <br />
-                                                        {atleta.dotspints}
-                                                    </Typography>
-                                                </Grid>
-                                            </Tooltip>
-                                        </Grid>
-                                    </CardContent>
-                                </Card>
+                                <CardAtletas
+                                    img={atleta.img}
+                                    edad={atleta.edad}
+                                    nombre={atleta.nombre}
+                                    team={atleta.team}
+                                    catedad={atleta.catedad}
+                                    totalfpp={atleta.totalfpp}
+                                    ipfpoints={atleta.ipfpoints}
+                                    wilkspoints={atleta.wilkspoints}
+                                    dotspints={atleta.dotspints}
+                                />
                             </Grid>
                         ))
                     )}
