@@ -188,7 +188,7 @@ export default function ProfileMasc() {
                                         120 +
                                     </MenuItem>
                                     <MenuItem
-                                        value={'120+'}
+                                        value={'Guest'}
                                         sx={{
                                             fontWeight: 'bold',
                                             color: '#153a4b',
