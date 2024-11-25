@@ -298,7 +298,7 @@ export default function NavBar() {
                             <MenuItem onClick={handleClose}>
                                 <Typography sx={{ color: '#153a4b', fontWeight: 'bold', display:'flex', alignItems: 'center' }} onClick={handleClickAtletas}>
                                     <AssignmentIndOutlinedIcon sx={{ color: '#153a4b', fontSize: 30 }} />
-                                    Perfiles de Atletas
+                                    Resultados Ultima Competencia
                                     <ExpandMoreIcon sx={{ color: '#153a4b', fontSize: 30 }} />
                                 </Typography>
                                 <Menu
