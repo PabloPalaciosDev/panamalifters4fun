@@ -87,7 +87,7 @@ export default function NavBar() {
 
                         <Button sx={{ color: 'white', fontWeight: 'bold' }} onClick={handleClickTops}>
                             <AssignmentIndOutlinedIcon sx={{ color: 'white', fontSize: 30 }} />
-                            Tops 10 de Atletas
+                            Top 10 de Atletas
                             <ExpandMoreIcon sx={{ color: 'white', fontSize: 35 }} />
                         </Button>
                         <Menu
@@ -137,7 +137,7 @@ export default function NavBar() {
                         
                         <Button sx={{ color: 'white', fontWeight: 'bold' }} onClick={handleClickAtletas}>
                             <AssignmentIndOutlinedIcon sx={{ color: 'white', fontSize: 30 }} />
-                            Perfiles de Atletas
+                            Resultados de Ultima Competencia
                             <ExpandMoreIcon sx={{ color: 'white', fontSize: 35 }} />
                         </Button>
                         <Menu
@@ -245,7 +245,7 @@ export default function NavBar() {
                             <MenuItem onClick={handleClose}>
                                 <Typography sx={{ color: '#153a4b', fontWeight: 'bold', display:'flex', alignItems: 'center' }} onClick={handleClickTops}>
                                     <AssignmentIndOutlinedIcon sx={{ color: '#153a4b', fontSize: 30 }} />
-                                    Resultados
+                                    Top 10 de Atletas
                                     <ExpandMoreIcon sx={{ color: '#153a4b', fontSize: 30 }} />
                                 </Typography>
                                 <Menu
