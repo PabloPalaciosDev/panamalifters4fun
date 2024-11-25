@@ -87,7 +87,7 @@ export default function NavBar() {
 
                         <Button sx={{ color: 'white', fontWeight: 'bold' }} onClick={handleClickTops}>
                             <AssignmentIndOutlinedIcon sx={{ color: 'white', fontSize: 30 }} />
-                            Resultados
+                            Tops 10 de Atletas
                             <ExpandMoreIcon sx={{ color: 'white', fontSize: 35 }} />
                         </Button>
                         <Menu
