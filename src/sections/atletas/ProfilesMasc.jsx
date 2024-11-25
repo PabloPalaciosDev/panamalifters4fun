@@ -1,12 +1,4 @@
-import {
-    Typography,
-    CircularProgress,
-    Box,
-    FormControl,
-    Select,
-    MenuItem,
-    Stack
-} from '@mui/material';
+import { Typography, CircularProgress, Box, FormControl, Select, MenuItem, Stack } from '@mui/material';
 import { Grid } from '@mui/material';
 import { useEffect, useState } from 'react';
 import CardAtletas from '../../components/CardAtletas';
@@ -18,9 +10,7 @@ export default function ProfileMasc() {
     const [atletasSeleccionados, setAtletasSeleccionados] = useState([]);
 
     useEffect(() => {
-        fetch(
-            'https://script.google.com/macros/s/AKfycbzMwZqRB1eONV1RmFjIDgEVdcm-MPVaOANTA7JpU1LbfZLHGFTQM36JejwXbQYGBmFD/exec'
-        )
+        fetch('https://script.google.com/macros/s/AKfycbzMwZqRB1eONV1RmFjIDgEVdcm-MPVaOANTA7JpU1LbfZLHGFTQM36JejwXbQYGBmFD/exec')
             .then((response) => response.json())
             .then((data) => {
                 const agrupadosPorCategoriaYSexo = data.reduce((acc, atleta) => {
@@ -197,14 +187,38 @@ export default function ProfileMasc() {
                                     >
                                         120 +
                                     </MenuItem>
+                                    <MenuItem
+                                        value={'120+'}
+                                        sx={{
+                                            fontWeight: 'bold',
+                                            color: '#153a4b',
+                                            fontSize: '1.2rem'
+                                        }}
+                                    >
+                                        Guest
+                                    </MenuItem>
                                 </Select>
                             </FormControl>
                         </Stack>
                     </Grid>
-                    {categoria === '' ? null : (
+                    {categoria === '' ? null : <Grid
+                          item
+                          xs={12}
+                          display={'flex'}
+                          justifyContent={'center'}
+                          textAlign={'center'}
+                          alignContent={'center'}
+                      >
+                          <Typography fontWeight={'bold'} variant="h4">
+                              Categoría {categoria} Kg
+                          </Typography>
+                      </Grid> ? (
+                        categoria === 'Guest'
+                    ) : (
                         <Grid item xs={12} display={'flex'} justifyContent={'center'} textAlign={'center'} alignContent={'center'}>
+                            {' '}
                             <Typography fontWeight={'bold'} variant="h4">
-                                Categoría {categoria} Kg
+                                Categoría Guest
                             </Typography>
                         </Grid>
                     )}

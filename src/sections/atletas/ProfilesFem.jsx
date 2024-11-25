@@ -183,14 +183,38 @@ export default function ProfileFem() {
                                     >
                                         + 84
                                     </MenuItem>
+                                    <MenuItem
+                                        value={'120+'}
+                                        sx={{
+                                            fontWeight: 'bold',
+                                            color: '#153a4b',
+                                            fontSize: '1.2rem'
+                                        }}
+                                    >
+                                        Guest
+                                    </MenuItem>
                                 </Select>
                             </FormControl>
                         </Stack>
                     </Grid>
-                    {categoria === '' ? null : (
+                    {categoria === '' ? null : <Grid
+                          item
+                          xs={12}
+                          display={'flex'}
+                          justifyContent={'center'}
+                          textAlign={'center'}
+                          alignContent={'center'}
+                      >
+                          <Typography fontWeight={'bold'} variant="h4">
+                              Categoría {categoria} Kg
+                          </Typography>
+                      </Grid> ? (
+                        categoria === 'Guest'
+                    ) : (
                         <Grid item xs={12} display={'flex'} justifyContent={'center'} textAlign={'center'} alignContent={'center'}>
+                            {' '}
                             <Typography fontWeight={'bold'} variant="h4">
-                                Categoría {categoria} Kg
+                                Categoría Guest
                             </Typography>
                         </Grid>
                     )}
